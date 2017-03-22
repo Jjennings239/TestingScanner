@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.shape.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="775.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.LoginScreenController">
+   <children>
+      <Separator layoutX="221.0" layoutY="65.0" orientation="VERTICAL" prefHeight="274.0" prefWidth="5.0" />
+      <TextField layoutX="243.0" layoutY="213.0" promptText="Username" fx:id="username" />
+      <ImageView fitHeight="168.0" fitWidth="166.0" layoutX="31.0" layoutY="135.0">
+         <image>
+            <Image url="@argo-data-squarelogo-1384786579176.png" />
+         </image>
+      </ImageView>
+      <Text layoutX="235.0" layoutY="97.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Welcome to the ARGO Testing Scanner">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Text>
+      <Text layoutX="235.0" layoutY="137.0" strokeType="OUTSIDE" strokeWidth="0.0" text="SmartWizard!">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Text>
+      <Text layoutX="243.0" layoutY="204.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Enter your username and then click Next" />
+      <Text layoutX="395.0" layoutY="230.0" strokeType="OUTSIDE" strokeWidth="0.0" text="e.g. jessicait" />
+      <Text fx:id="usernameWarning" fill="#f20a0a" layoutX="243.0" layoutY="257.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Please enter a username " visible="false" />
+      <Button fx:id="nextButton" layoutX="690.0" layoutY="324.0" mnemonicParsing="false" text="Next" />
+   </children>
+</Pane>

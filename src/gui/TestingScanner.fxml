@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.canvas.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+
+<VBox prefHeight="675.0" prefWidth="720.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller= "gui.TestingScreenController" >
+  <children>
+    <MenuBar VBox.vgrow="NEVER">
+      <menus>
+        <Menu mnemonicParsing="false" text="File">
+          <items>
+            <MenuItem mnemonicParsing="false" text="Quit" fx:id="selectQuit" />
+          </items>
+        </Menu>
+            <Menu mnemonicParsing="false" text="Configure">
+               <items>
+                  <MenuItem mnemonicParsing="false" text="Alert Type" fx:id="selectAlert" />
+               </items>
+            </Menu>
+      </menus>
+    </MenuBar>
+      <Pane prefHeight="675.0" prefWidth="720.0">
+         <children>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="254.0"  layoutX="42.0" layoutY="57.0" stroke="#5b5757" strokeType="INSIDE" strokeWidth="3.0" width="625.0" />
+            <Text layoutX="45.0" layoutY="48.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Setup">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Text>
+            <CheckBox layoutX="76.0" layoutY="100.0" mnemonicParsing="false" text="Warning" />
+            <CheckBox layoutX="228.0" layoutY="100.0" mnemonicParsing="false" text="Error" />
+            <CheckBox layoutX="354.0" layoutY="100.0" mnemonicParsing="false" text="Critical" />
+            <CheckBox layoutX="500.0" layoutY="273.0" mnemonicParsing="false" selected="true" text="Automatically zip files" />
+            <Text layoutX="66.0" layoutY="90.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Severity">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Text>
+            <Button fx:id="startButton" layoutX="500.0" layoutY="330.0" mnemonicParsing="false" text="Start Scan" />
+            <AnchorPane layoutX="66.0" layoutY="165.0" prefHeight="35.0" prefWidth="450.0">
+               <children>
+                  <TextField fx:id="sourceFileText" layoutX="2.0" prefHeight="30.0" prefWidth="450.0" />
+                  <Button fx:id="sourceFileButton" layoutX="7.0" layoutY="2.0" mnemonicParsing="false" text="Choose File" />
+               </children>
+            </AnchorPane>
+            <Text layoutX="70.0" layoutY="155.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Source File Location">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Text>
+            <AnchorPane layoutX="66.0" layoutY="230.0" prefHeight="35.0" prefWidth="450.0">
+               <children>
+                  <TextField fx:id="zipFileText" layoutX="2.0" prefHeight="30.0" prefWidth="450.0" />
+                  <Button fx:id="zipFileButton" layoutX="7.0" layoutY="2.0" mnemonicParsing="false" text="Choose File" />
+               </children>
+            </AnchorPane>
+            <Text layoutX="70.0" layoutY="220.0" strokeType="OUTSIDE" strokeWidth="0.0" text= "Zip File Location">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Text>
+            <TableView fx:id="dataTable" layoutX="42.0" layoutY="375.0" prefHeight="230.0" prefWidth="625.0">
+              <columns>
+                <TableColumn prefWidth="150.0" text="Event ID" />
+                  <TableColumn prefWidth="148.0" text="Time" />
+                  <TableColumn prefWidth="135.0" text="Severity" />
+                  <TableColumn prefWidth="200.0" text="Details" />
+              </columns>
+            </TableView>
+            <Button fx:id="pauseButton" layoutX="595.0" layoutY="330.0" mnemonicParsing="false" text="Pause Scan" />
+         </children>
+      </Pane>
+  </children>
+</VBox>

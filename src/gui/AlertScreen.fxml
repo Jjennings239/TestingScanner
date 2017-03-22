@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="298.0" prefWidth="371.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.AlertScreenController">
+   <children>
+      <Text layoutX="57.0" layoutY="58.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Warning" />
+      <Text layoutX="57.0" layoutY="145.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Critical" />
+      <Text layoutX="57.0" layoutY="236.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Error" />
+      <ComboBox fx:id= "warningAlert" layoutX="170.0" layoutY="31.0" prefWidth="150.0" promptText="Ping" />
+      <ComboBox fx:id="criticalAlert" layoutX="170.0" layoutY="119.0" prefWidth="150.0" promptText="Chime" />
+      <ComboBox fx:id="errorAlert" layoutX="170.0" layoutY="210.0" prefWidth="150.0" promptText="Chime" />
+   </children>
+</Pane>
