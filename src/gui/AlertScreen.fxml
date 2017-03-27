@@ -5,13 +5,14 @@
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="298.0" prefWidth="371.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.AlertScreenController">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="320.0" prefWidth="375.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.AlertScreenController">
    <children>
-      <Text layoutX="57.0" layoutY="58.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Warning" />
-      <Text layoutX="57.0" layoutY="145.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Critical" />
-      <Text layoutX="57.0" layoutY="236.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Error" />
-      <ComboBox fx:id= "warningAlert" layoutX="170.0" layoutY="31.0" prefWidth="150.0" promptText="Ping" />
-      <ComboBox fx:id="criticalAlert" layoutX="170.0" layoutY="119.0" prefWidth="150.0" promptText="Chime" />
-      <ComboBox fx:id="errorAlert" layoutX="170.0" layoutY="210.0" prefWidth="150.0" promptText="Chime" />
+      <Text layoutX="35.0" layoutY="57.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Warning" />
+      <Text layoutX="34.0" layoutY="145.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Critical" />
+      <Text layoutX="42.0" layoutY="228.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Error" />
+      <ComboBox fx:id="warningAlert" layoutX="136.0" layoutY="31.0" prefWidth="150.0" promptText="Ping" />
+      <ComboBox fx:id="criticalAlert" layoutX="136.0" layoutY="119.0" prefWidth="150.0" promptText="Chime" />
+      <ComboBox fx:id="errorAlert" layoutX="136.0" layoutY="202.0" prefWidth="150.0" promptText="Chime" />
+      <Button fx:id="exitButton" layoutX="310.0" layoutY="261.0" mnemonicParsing="false" text="OK" />
    </children>
 </Pane>

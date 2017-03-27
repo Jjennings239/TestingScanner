@@ -7,29 +7,33 @@ public class UIModel {
     private String sourceFilePath;
     private String zipFilePath;
     private String sourceFileName;
+    private String zipFileName;
 
     //check if start scan button has been pressed
     private boolean runStatus;
 
     //maybe change to tone frequency(int) later
-    private String errorAlertTone;
-    private String warningAlertTone;
-    private String criticalAlertTone;
+    // 0 = Warning, 1 = Error, 2 = Critical
+    private String[] AlertTones = {"Ping", "Chime", "Ping"};
+
+    //0 - Warning, 1 - Error, 2 - Critical
+    private boolean[] severityBoxes = new boolean[3];
 
     //Include File sourceFile
     //Include Event ID, Time, etc. for table
 
 
     UIModel(){
+        //initialize variables
         this.usernameEntered = false;
         this.runStatus = false;
     }
 
-    public String getUsername(){
+    String getUsername(){
         return this.username;
     }
 
-    public void setUsername(String name){
+    void setUsername(String name){
         this.username = name;
     }
 
@@ -41,51 +45,41 @@ public class UIModel {
         this.usernameEntered = nameSet;
     }
 
-    public String getsourceFilePath(){
-        return this.sourceFilePath;
-    }
+    String getsourceFilePath(){return this.sourceFilePath;}
 
-    public void setSourceFilePath(String path){
+    void setSourceFilePath(String path){
         this.sourceFilePath = path;
     }
 
-    public String getZipFilePath(){
+    String getZipFilePath(){
         return this.zipFilePath;
     }
 
-    public void setZipFilePath(String path){
+    void setZipFilePath(String path){
         this.zipFilePath = path;
     }
 
-    public String getSourceFileName(){
+    String getZipFileName(){return this.zipFileName;}
+
+    void setZipFileName(String name){ this.zipFileName = name;}
+
+    String getSourceFileName(){
         return this.sourceFileName;
     }
 
-    public void setSourceFileName(String name){
+    void setSourceFileName(String name){
         this.sourceFileName = name;
     }
 
-    public String getErrorAlertTone(){
-        return this.errorAlertTone;
-    }
+    String getAlertTones(int index){ return this.AlertTones[index];}
 
-    public void setErrorAlertTone(String tone){
-        this.errorAlertTone = tone;
-    }
+    void setAlertTones(int index, String tone){this.AlertTones[index]= tone;}
 
-    public String getCriticalAlertTone(){
-        return this.criticalAlertTone;
-    }
+    boolean getRunStatus(){return this.runStatus;}
 
-    public void setCriticalAlertTone(String tone){
-        this.criticalAlertTone = tone;
-    }
+    void setRunStatus(boolean status){this.runStatus = status;}
 
-    public String getWarningAlertTone(){
-        return this.warningAlertTone;
-    }
+    void setSeverityBoxes(int index, boolean value){ this.severityBoxes[index] = value;}
 
-    public void setWarningAlertTone(String tone){
-        this.warningAlertTone = tone;
-    }
+    boolean getSeverityBoxes(int index){ return this.severityBoxes[index];}
 }

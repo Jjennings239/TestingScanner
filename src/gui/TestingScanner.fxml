@@ -34,10 +34,10 @@
                   <Font size="20.0" />
                </font>
             </Text>
-            <CheckBox layoutX="76.0" layoutY="100.0" mnemonicParsing="false" text="Warning" />
-            <CheckBox layoutX="228.0" layoutY="100.0" mnemonicParsing="false" text="Error" />
-            <CheckBox layoutX="354.0" layoutY="100.0" mnemonicParsing="false" text="Critical" />
-            <CheckBox layoutX="500.0" layoutY="273.0" mnemonicParsing="false" selected="true" text="Automatically zip files" />
+            <CheckBox fx:id="warningBox" layoutX="76.0" layoutY="100.0" mnemonicParsing="false" text="Warning" />
+            <CheckBox fx:id="errorBox" layoutX="228.0" layoutY="100.0" mnemonicParsing="false" text="Error" />
+            <CheckBox fx:id="criticalBox" layoutX="354.0" layoutY="100.0" mnemonicParsing="false" text="Critical" />
+            <CheckBox fx:id="autoZipFiles" layoutX="500.0" layoutY="273.0" mnemonicParsing="false" selected="true" text="Automatically zip files" />
             <Text layoutX="66.0" layoutY="90.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Severity">
                <font>
                   <Font size="20.0" />

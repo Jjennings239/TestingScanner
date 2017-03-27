@@ -1,14 +1,9 @@
 package gui;
 
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.fxml.FXML;
+import javafx.scene.Node;
+import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
-
-import java.awt.event.ActionListener;
-import java.util.Observable;
 
 public class AlertScreenController {
     @FXML
@@ -17,18 +12,14 @@ public class AlertScreenController {
     ComboBox criticalAlert;
     @FXML
     ComboBox warningAlert;
-
-    private String errorAlertTone;
-    private String criticalAlertTone;
-    private String warningAlertTone;
+    @FXML
+    private Button exitButton;
 
     public void initialize(){
         initializeComboBoxes();
-        setEventHandlers();
+        setEventHandlers();}
 
-    }
-
-    public void initializeComboBoxes(){
+    private void initializeComboBoxes(){
         errorAlert.getItems().add("Ping");
         errorAlert.getItems().add("Chime");
         errorAlert.getItems().add("Horn");
@@ -40,37 +31,24 @@ public class AlertScreenController {
         warningAlert.getItems().add("Ping");
         warningAlert.getItems().add("Chime");
         warningAlert.getItems().add("Horn");
-            }
-
-    public void setEventHandlers(){
-        errorAlert.setOnAction(new EventHandler<ActionEvent>() {
-            @Override
-            public void handle(ActionEvent event) {
-                errorAlertTone = (String)errorAlert.getSelectionModel().getSelectedItem();
-                errorAlert.setPromptText(errorAlertTone);
-
-            }
-        });
-
-        criticalAlert.setOnAction(new EventHandler<ActionEvent>() {
-            @Override
-            public void handle(ActionEvent event) {
-                criticalAlertTone = (String)criticalAlert.getSelectionModel().getSelectedItem();
-                criticalAlert.setPromptText(criticalAlertTone);
-
-            }
-        });
-
-        warningAlert.setOnAction(new EventHandler<ActionEvent>() {
-            @Override
-            public void handle(ActionEvent event) {
-                warningAlertTone = (String)warningAlert.getSelectionModel().getSelectedItem();
-                warningAlert.setPromptText(warningAlertTone);
-
-            }
-        });
-
     }
 
+    private void setEventHandlers() {
+        errorAlert.setOnAction(ee ->
+                UIMain.getModel().setAlertTones(1, (String) errorAlert.getSelectionModel().getSelectedItem()));
+        errorAlert.setPromptText(UIMain.getModel().getAlertTones(1));
 
+        criticalAlert.setOnAction(ec ->
+                UIMain.getModel().setAlertTones(2, (String) criticalAlert.getSelectionModel().getSelectedItem()));
+        criticalAlert.setPromptText(UIMain.getModel().getAlertTones(2));
+
+
+        warningAlert.setOnAction(ew ->
+                UIMain.getModel().setAlertTones(0, (String) warningAlert.getSelectionModel().getSelectedItem()));
+        warningAlert.setPromptText(UIMain.getModel().getAlertTones(0));
+
+        exitButton.setOnAction(closeWindow -> {
+            ((Node)(closeWindow.getSource())).getScene().getWindow().hide();
+        });
+    }
 }
